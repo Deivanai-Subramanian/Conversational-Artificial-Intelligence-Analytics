@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="w3-center "><b>Port to Aspirants</b></h1>
+    <h3 class="w3-center w3-text-theme"><b>Mobile Number Portability (MNP)</b></h3><br>
+    <div class="w3-container w3-row">
+        <div class="w3-container w3-third">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <p><b>STEP 1</b></p>
+                <h2><b>Raise porting request</b></h2>
+                <p>SMS 'Port'<10-digit mobile number> to 1900 from the number you want to port.</p>
+            </div>
+        </div>
+        <div class="w3-container w3-third">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <p><b>STEP 2</b></p>
+                <h2><b>Request New SIM</b></h2>
+                <p>Once you get the unique porting code along with the expiry date, apply for New SIM registration</p>
+            </div>
+        </div>
+        <div class="w3-container w3-third">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <p><b>STEP 3</b></p>
+                <h2><b>Online eKYC verification</b></h2>
+                <p>Complete all eKYC (Aadhaar Card) verification process at online, get your SIM at door delivery</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="w3-container w3-center">
+            <br>
+            <a href="#" id="profileButton" class="w3-center w3-button w3-aqua w3-round-xlarge">Port to Aspirants</a>
+        </div>
+    </div>
+    <br>
+
+    <div id="userProfile" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+            <div class="w3-container w3-center">
+                <form method="POST" action="/simPort">
+                <span onclick="document.getElementById('userProfile').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2 class="w3-text-theme w3-center"><b>SIM Porting Request</b></h2>
+                <p for="name"><b>Name: </b><input class="w3-panel w3-boarder-teal" type="text" id="name" name="name" required></p>
+                <p for="mobile_number"><b>Phone Number: </b><input class="w3-panel w3-boarder-teal" type="text" id="mobile_number" name="mobile_number" placeholder="+91...." required></p>
+                <p for="upc"><b>Unique Porting Code (UPC): </b><input class="w3-panel w3-boarder-teal" type="text" id="upc" name="upc" required></p>
+                <div class="w3-container w3-center">
+                    <button class="w3-center w3-button w3-aqua w3-round-xlarge">Submit</button>
+                    <br>
+                </div>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to show the modal
+        document.getElementById("profileButton").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+            document.getElementById("userProfile").style.display = "block";
+        });
+
+        // Close the modal when the close button is clicked
+        document.querySelector(".w3-display-topright").addEventListener("click", function () {
+            document.getElementById("userProfile").style.display = "none";
+        });
+    </script>
+
+{% endblock %}
+

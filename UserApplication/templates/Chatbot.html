@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aspirants Telecom | Chatbot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Aspirants Telecom | Chatbot</title>
+    <!--link rel="stylesheet" href="/static/style.css"-->
+    <style>
+        body {
+            background: url('{{ image_path }}') no-repeat center center fixed;
+            background-size: cover;
+            /* other properties */
+        }
+
+        /* Style for the chatbot logo */
+        /* Create a chatbot icon with a circular image background */
+        .chatbot-logo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 100px;
+            color: #007BFF;
+        }
+
+        /* Style for the microphone icon */
+        /*.voice-input {
+            font-size: 28px;
+            margin-right: 10px;
+            color: blue;
+            position: relative;
+            top: 15px !important;
+        }*/
+        i.fas.fa-microphone {
+            font-size: 28px; /* Increase the font size to make the icon larger */
+            margin-right: 10px;
+            color: rgb(25, 23, 26); /* Change the color of the microphone icon */
+            position: relative;
+            top: 5px; /* Move the icon 5 pixels down (adjust as needed) */
+            left: 5px;
+        }
+
+        .chat-widget {
+            /*position: fixed;
+            bottom: 10px;
+            right: 50px;
+            width: 630px;
+            height: 300px;
+            display: none;
+             */
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 600px;
+             background-color: white;
+             display: none;
+        }
+
+        #chat-container {
+            /*width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 5px; */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style for the chat history container */
+        #chat-history {
+            /*display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 200px;
+            overflow-y: auto;*/
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 90%; /* Adjust the max-height as needed */
+            overflow-y: auto;
+        }
+
+        /* Style for user messages */
+        .user-message {
+        background-color: #fbfafaef;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px; /* Add margin to give space around the message */
+        align-self: flex-end;
+        /*max-width: 70%;*/
+        max-width: calc(70% - 20px); /* Adjusting for padding */
+        border: 1px solid #4c5a5e; /* Match border color with background */
+        box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+        color: black;
+       }
+
+        /* Style for bot messages */
+        .bot-message {
+            background-color: #17aa23; /* Light gray background */
+            border-radius: 5px;
+            padding: 10px;
+            align-self: flex-start; /* Align to the left */
+            max-width: 70%; /* Adjust as needed */
+            overflow-wrap: break-word; /* Allow long words to break onto the next line */
+            word-wrap: break-word; /* Handle long words in older browsers */
+            white-space: normal; /* Allow text to wrap within the box */
+        }
+
+
+        #user-input-container {
+            /*display: flex;
+            gap: 10px;
+            margin-top: 10px;*/
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+            /*background-color: #ffffff;*/
+        }
+
+
+        #user-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #211e1e;
+            border-radius: 5px;
+        }
+
+
+
+        /* Style for send button */
+        #send-button {
+            padding: 8px 15px;
+            background-color: #007BFF; /* Blue color for the button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button {
+            background-color: transparent; /* Remove button background color */
+            border: none; /* Remove button border */
+            padding: 0; /* Remove button padding */
+        }
+
+        /* Adjust the Font Awesome icon within the button */
+        button .fas.fa-microphone {
+            font-size: 24px; /* Adjust the font size */
+            color: #007BFF; /* Set the color of the microphone icon */
+        }
+
+    </style>
+</head>
+
+<body class="w3-highway-blue">
+    <div class="w3-container w3-bar w3-black w3-xlarge" style="z-index:4">
+        <div class="w3-bar-item w3-left">
+            <button class="w3-text-aqua w3-button"><i class="material-icons w3-text-aqua">forum</i> Aspirants Care</button>
+        </div>
+        <div class="w3-bar-item w3-right">
+          <a href="Help.html" class="w3-right w3-padding w3-bar-item w3-button"><b><i class="material-icons w3-text-aqua">close</i></b></a>
+        </div>
+    </div>
+
+    <div>
+         <br>
+         <div id="chat-container">
+            <div id="chat-history" class="w3-container">
+                    <!-- Chat response containers with microphone icons -->
+                    <!-- ... Messages will be displayed here ... -->
+            </div>
+            <div id="user-input-container" class="w3-container">
+                <input type="text" id="user-input" placeholder="Type your message...">
+                <i id="voice-input" class="fas fa-microphone"></i>
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

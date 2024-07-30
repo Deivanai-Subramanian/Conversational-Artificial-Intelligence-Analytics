@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-padding-16 w3-theme w3-animate-left">
+    <div class="w3-container w3-center">
+        <br>
+        <div class="w3-card-2 w3-round-xxxlarge">
+            <img src="{{ url_for('static', filename='images/Service/service.png') }}" width="100%">
+        </div>
+        <br>
+    </div>
+</div>
+
+<div class="w3-container w3-light-grey w3-center w3-row">
+    <br>
+    <h2 class="w3-text-deep-purple w3-center w3-serifr"><b><i>"Your World, Your Network"</i></b></h2>
+    <br>
+   <div class="w3-container w3-quarter">
+       <div class=" w3-center w3-white w3-panel w3-card-4 w3-padding-16">
+           <img src="{{ url_for('static', filename='images/Service/ic_sim.svg') }}" width="50%"><br>
+           <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="NewSIM.html">Get Aspirants SIM</a>
+       </div>
+   </div>
+    <div class="w3-container w3-quarter">
+        <div class="w3-center w3-white w3-panel w3-card-4 w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Service/ic_simIssue.svg') }}" width="50%"><br>
+           <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="{{ url_for('go_to_issue') }}">Raising Issues</a>
+       </div>
+    </div>
+    <div class="w3-container w3-quarter">
+        <div class="w3-center w3-white w3-panel w3-card-4 w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Service/ic_sim_Lost.svg') }}" width="50%"><br>
+            <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="{{ url_for('go_to_lost_sim') }}">SIM Lost</a>
+       </div>
+    </div>
+    <div class="w3-container w3-quarter">
+        <div class="w3-center w3-white w3-panel w3-card-4 w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Service/ic_simPort.svg') }}" width="50%"><br>
+           <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="{{ url_for('portNumber') }}">Port to Aspirants</a>
+       </div>
+    </div>
+</div>
+
+{% endblock %}

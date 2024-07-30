@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-padding-16 w3-theme w3-animate-left w3-row">
+    <div class="w3-twothird w3-left">
+        <div class="w3-panel w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Base/new-logo.svg') }}" width="30%">
+            <h1 class="w3-text-aqua" style="font-family:Times New Roman"><br><b>Unlock the Power of Connectivity
+                <br>with Our Telecom Solutions!<br></b></h1><br>
+        </div>
+    </div>
+    <div class="w3-third w3-right">
+        <div class="w3-panel w3-padding-16 w3-right">
+            <img src="{{ url_for('static', filename='images/diamond.png') }}" width="80%">
+        </div>
+    </div>
+</div>
+
+<div class="w3-container w3-row w3-bar-item">
+    <div class="w3-center w3-panel w3-padding-16">
+        <h2 class="w3-text-theme"> <b>Create your own Customized plan exclusively with your Aspirants Telecom</b> </h2>
+    </div>
+</div>
+
+<div class="w3-container w3-row">
+    <div class="w3-col w3-quarter"><p> </p></div>
+    <div class="w3-col w3-half w3-center">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <form action="/predict" method="post">
+                    <label for="unlimitedCalls">Do you want Unlimited calls?</label>
+                    <input type="radio" name="unlimitedCalls" value="1"> Yes
+                    <input type="radio" name="unlimitedCalls" value="0" checked> No
+
+                    <br><br>
+
+
+                    <label for="dailyLimit">Do you want a Daily Data Limit?</label>
+                    <input type="radio" name="dailyLimit" value="1"> Yes
+                    <input type="radio" name="dailyLimit" value="0" checked> No
+
+                    <br><br>
+
+                    <label for="dataValue">Enter Data Value:</label>
+                    <input type="text" name="dataValue">
+
+                    <br><br>
+
+                    <label for="dailySmsLimit">Do you want a daily SMS limit?</label>
+                    <input type="radio" name="dailySmsLimit" value="1"> Yes
+                    <input type="radio" name="dailySmsLimit" value="0" checked> No
+
+                    <br><br>
+
+                    <label for="smsValue">Enter SMS Value:</label>
+                    <input type="text" name="smsValue">
+
+                    <br><br>
+
+
+                    <label for="numberOfDays">Enter the number of days for the plan:</label>
+                    <input type="text" name="numberOfDays">
+
+                    <br><br>
+
+                    <input type="submit" class="w3-button w3-aqua w3-round-xxxlarge" value="Get Price">
+                </form>
+            </div>
+        </div>
+        <div class="w3-col w3-quarter"><p></p></div>
+    </div>
+    <div class="w3-container w3-row">
+        <div class="w3-container w3-quarter">
+            <p> </p>
+        </div>
+        <div class="w3-container w3-half">
+            <div class="w3-panel w-center w3-theme-l5 w3-padding-16">
+                <p><b class="w3-text-blue w-center">NOTE:</b><br>
+                <b>* </b>If your are choosing Daily Data Limit as YES then enter Data Value for per day<br>
+                <b>* </b>If your are choosing Daily Data Limit as NO then enter Overall Data Value<br>
+                <b>* </b>If your are choosing SMS Daily Limit as YES then enter No. of SMS for per day<br>
+                <b>* </b>If your are choosing SMS Daily Limit as NO then enter Overall No. of SMS
+                </p>
+            </div>
+        </div>
+        <div class="w3-container w3-quarter">
+            <p> </p>
+        </div>
+    </div>
+    <br>
+{% endblock %}

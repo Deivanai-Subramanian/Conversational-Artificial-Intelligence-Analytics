@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w3-padding-16 w3-white w3-container ">
+    <div class="w3-center w3-panel w3-card-4 w3-theme-l4 w3-padding-16 w3-round-xxlarge">
+    <div class="w3-twothird w3-center">
+        <img src="{{ url_for('static', filename='images/Service/CustomerCare.png') }}" width="60%">
+    </div>
+    <div class="w3-third">
+        <br>
+      <p class="w3-text-theme w3-xxlarge w3-center" style="font-family:Times New Roman"><b>We Apologize for your inconvenience our
+          <br>Aspirants Customer care<br>team will resolve your Issue </b> </p>
+        <h4>Kindly provide detailed information about your issue</h4>
+        <br>
+        <a href="#" id="issueButton" class="w3-center w3-button w3-aqua w3-round-xlarge">Click Here</a>
+    </div>
+    </div>
+</div>
+
+    <div id="issuedetails" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+            <div class="w3-container w3-center">
+                <span onclick="document.getElementById('issuedetails').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2 class="w3-text-theme w3-center"><b>Submit your ISSUE</b></h2>
+                <form id="IssueForm">
+                        <div class="form-group">
+                            <label for="Issue">Details about the issue:</label><br>
+                            <textarea class="w3-panel w3-boarder-teal" id="Issue" name="Issue" rows="4"></textarea>
+                        </div>
+                </form>
+                <form id="emailInputForm">
+                        <div class="form-group">
+                            <label for="userEmail">Enter your Email:</label><br>
+                            <input type="text" class="w3-panel w3-boarder-teal" id="userEmail" name="userEmail">
+                        </div>
+                </form>
+                <div class="w3-container w3-center">
+                    <a href="#" type="button" class="w3-center w3-button w3-aqua w3-round-xlarge" id="submitPhoneNumber">Submit</a>
+                    <br>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+
+    // JavaScript to show the modal
+        document.getElementById("issueButton").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+            document.getElementById("issuedetails").style.display = "block";
+        });
+
+        // Close the modal when the close button is clicked
+        document.querySelector(".w3-display-topright").addEventListener("click", function () {
+            document.getElementById("issuedetails").style.display = "none";
+        });
+
+        document.getElementById('submitPhoneNumber').addEventListener('click', function () {
+            // Get the phone number from the input field
+            var issuedet = document.getElementById('Issue').value;
+            var userEmail = document.getElementById('userEmail').value;
+            alert('We have received your Issue, we will review it and resolve it within 2 hours');
+            window.location.href = "/issue?details=" + issuedet + "&email=" + userEmail;
+        });
+</script>
+
+{% endblock %}

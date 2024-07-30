@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-padding-16 w3-theme w3-animate-left w3-row">
+    <div class="w3-third w3-left">
+        <div class="w3-panel w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Base/new-logo.svg') }}" width="80%">
+        </div>
+    </div>
+    <div class="w3-third w3-center">
+        <div>
+            <img src="{{ url_for('static', filename='images/diamond.png') }}">
+        </div>
+    </div>
+    <div class="w3-third w3-right">
+        <div class="w3-container w3-panel w3-display-bottomright">
+            <h1 class="w3-text-aqua"><b>We're the Bridge to Your <br></b>
+                <font style="font-family:Times New Roman" class="w3-text-white w3-xxxlarge"><b>Digital Aspirations</b></font></h1>
+            <br>
+        </div>
+    </div>
+</div>
+
+<div class="w3-container w3-center w3-row">
+    <br>
+    <h2 class="w3-text-deep-purple w3-center w3-serifr"><b><i>"Wireless wonders, wired for the future communication without boundaries".</i></b></h2>
+    <br>
+   <div class="w3-container w3-quarter">
+       <div class=" w3-center w3-panel w3-card-4 w3-deep-purple w3-padding-16">
+           <img src="{{ url_for('static', filename='images/Home/SIMArt.png') }}" width="50%"><br>
+           <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="NewSIM.html">Buy New SIM</a>
+       </div>
+   </div>
+    <div class="w3-container w3-quarter">
+        <div class="w3-center w3-panel w3-card-4 w3-deep-purple w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Home/RechargeArt.png') }}" width="43%"><br><br>
+           <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="PlansAndRecharge.html">Plans & Recharge</a>
+       </div>
+    </div>
+    <div class="w3-container w3-quarter">
+        <div class="w3-center w3-panel w3-card-4 w3-deep-purple w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Home/HelpArt.png') }}" width="58%"><br>
+            <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="Help.html">Help</a>
+       </div>
+    </div>
+    <div class="w3-container w3-quarter">
+        <div class="w3-center w3-panel w3-card-4 w3-deep-purple w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Home/PortArt.png') }}" width="54%"><br>
+           <a class="w3-bar-item w3-button w3-aqua w3-round-xlarge" href="{{ url_for('portNumber') }}">Port to Aspirants</a>
+       </div>
+    </div>
+</div>
+
+<div class="w3-padding-16 w3-white w3-container ">
+    <div class="w3-panel w3-card-4 w3-padding-16 w3-round-xxlarge" style="background-color: #00003f;">
+    <div class="w3-half">
+      <img src="{{ url_for('static', filename='images/Home/online.jpg') }}" width="100%">
+    </div>
+    <div class="w3-half w3-center">
+        <br><br><br>
+    <p class="w3-text-aqua w3-xxlarge" style="font-family:Times New Roman"><b>"From registration to resolution all online,
+        <br>all easy."
+      <br>"Serving you, anytime, anywhere, online."</b></p>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="w3-center "><b>Get Aspirants SIM</b></h1>
+    <h3 class="w3-center w3-text-theme"><b>NEW SIM REGISTRATION PROCESS</b></h3><br>
+    <div class="w3-container w3-row">
+        <div class="w3-container w3-third">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <p><b>STEP 1</b></p>
+                <h2><b>Upload KYC Document</b></h2>
+                <p>Upload valid AADHAAR CARD document proof of identity for eKYC verification.</p>
+            </div>
+        </div>
+        <div class="w3-container w3-third">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <p><b>STEP 2</b></p>
+                <h2><b>Upload Passport Image</b></h2>
+                <p>Upload clear passport image for future real-time verification.</p>
+            </div>
+        </div>
+        <div class="w3-container w3-third">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <p><b>STEP 3</b></p>
+                <h2><b>Payment Processing</b></h2>
+                <p>Once payment processing is completed, get your SIM at door delivery</p>
+            </div>
+        </div>
+        <br><br>
+    </div>
+    <div class="w3-container w3-row">
+        <div class="w3-container w3-quarter">
+            <p> </p>
+        </div>
+        <div class="w3-container w3-half">
+            <div class="w3-panel w-center w3-theme-l5 w3-padding-16">
+                <p class="w3-text-blue w-center"><b>NOTE:</b></p>
+                <p class="w-center"><b>*</b> Uploaded image will be used for future face detection in cases of Lost SIM request verification.
+                <br><b>*</b> Make sure your camera and environment with clean and good lightening for online Aadhar QR code verification and Passport image verification during online new registration.</p>
+            </div>
+        </div>
+        <div class="w3-container w3-quarter">
+            <p> </p>
+        </div>
+    </div>
+    <div class="w3-container w3-center">
+        <a href="{{ url_for('document_upload') }}" class="w3-center w3-button w3-aqua w3-round-xlarge">Get Start</a>
+    </div>
+<br>
+
+
+
+
+{% endblock %}
+

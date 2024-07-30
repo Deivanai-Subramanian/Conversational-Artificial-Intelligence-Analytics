@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="w3-center "><b>New SIM Card Registration</b></h1>
+    <h3 class="w3-center w3-text-theme"><b>Choose New SIM type and continue Payment processing</b></h3>
+    <div class="w3-container w3-row">
+        <div class="w3-container w3-half w3-left">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16 w3-center">
+                <h2 class="w3-text-theme"><b>E-SIM</b></h2>
+                <h6 class="w3-text-blue"><b>NOTE: Check with your device compatibility for the installation of E-SIM</b></h6>
+                <p>NEW USER Plan - Enjoy Unlimited calls and Data for 45 Days</p>
+                <p>Delivery charge: <i>&#8377</i>0</p>
+                <p><b>TOTAL COST: <i>&#8377</i>200 (Inclusive of all taxes)</b></p>
+                <button class="w3-button w3-aqua w3-round" onclick="openRazorpayPopupEsim(200)">Pay Now</button>
+            </div>
+        </div>
+        <div class="w3-container w3-half w3-right">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16 w3-center">
+                <h2 class="w3-text-theme"><b>SIM CARD</b></h2>
+                <h6 class="w3-text-blue"><b>NOTE: This may take 2-3 business days to receive your physical SIM card</b></h6>
+                <p>NEW USER Plan - Enjoy Unlimited calls and Data for 45 Days</p>
+                <p>Delivery charge: <i>&#8377</i>40</p>
+                <p><b>TOTAL COST: <i>&#8377</i>240 (Inclusive of all taxes)</b></p>
+                <button class="w3-button w3-aqua w3-round" onclick="openRazorpayPopupSIMcard(240)">Pay Now</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script>
+    //payment for SIM card
+    function openRazorpayPopupSIMcard(amount) {
+        // Convert the amount to paise
+        var amountInPaise = amount * 100;
+
+        // Make an AJAX request to your server to create a Razorpay order
+        fetch('/create-razorpay-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount: amountInPaise }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Initialize the Razorpay object with your Razorpay API key
+            var options = {
+                key: 'rzp_test_uYSCttEb2YeTMd',
+                amount: data.amount, // Amount in paise
+                currency: 'INR', // Currency code
+                name: 'Aspirants Telecom',
+                description: 'Recharge',
+                order_id: data.id,
+                handler: function (response) {
+                                // You can handle the payment success here
+                                $.ajax({
+                                    url: '/store_payment', // Modify the URL as needed
+                                    method: 'POST',
+                                    contentType: 'application/json', // Set the content type
+                                    data: JSON.stringify({
+                                        razorpay_payment_id: response.razorpay_payment_id,
+                                        razorpay_order_id: response.razorpay_order_id,
+                                        description: 'Recharge',
+                                    }),
+                                    success: function (data) {
+                                        alert('Payment successful for Recharging! Payment ID: ' + response.razorpay_payment_id);
+                                        if (data.message === "Payment details saved in MongoDB") {
+                                            // Redirect to cdSIMprocess Route
+                                            window.location.href = '/cdSIMprocess';
+                                        }
+                                    },
+                                    error: function () {
+                                        alert('Error storing payment details.');
+                                    }
+                                });
+                            },
+                            theme: {
+                                color: '#0a0082' ,
+                                },
+                            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        })
+        .catch(error => {
+            console.error('Error creating Razorpay order: ' + error);
+        });
+    }
+
+    //payment for eSIM
+    function openRazorpayPopupEsim(amount) {
+        // Convert the amount to paise
+        var amountInPaise = amount * 100;
+
+        // Make an AJAX request to your server to create a Razorpay order
+        fetch('/create-razorpay-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount: amountInPaise }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Initialize the Razorpay object with your Razorpay API key
+            var options = {
+                key: 'rzp_test_uYSCttEb2YeTMd',
+                amount: data.amount, // Amount in paise
+                currency: 'INR', // Currency code
+                name: 'Aspirants Telecom',
+                description: 'Recharge',
+                order_id: data.id,
+                handler: function (response) {
+                                // You can handle the payment success here
+                                $.ajax({
+                                    url: '/store_payment', // Modify the URL as needed
+                                    method: 'POST',
+                                    contentType: 'application/json', // Set the content type
+                                    data: JSON.stringify({
+                                        razorpay_payment_id: response.razorpay_payment_id,
+                                        razorpay_order_id: response.razorpay_order_id,
+                                        description: 'Recharge',
+                                    }),
+                                    success: function (data) {
+                                        alert('Payment successful for Recharging! Payment ID: ' + response.razorpay_payment_id);
+                                        if (data.message === "Payment details saved in MongoDB") {
+                                            // Redirect to eSIMprocess Route
+                                            window.location.href = '/eSIMprocess';
+                                        }
+                                    },
+                                    error: function () {
+                                        alert('Error storing payment details.');
+                                    }
+                                });
+                            },
+                            theme: {
+                                color: '#0a0082' ,
+                                },
+                            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        })
+        .catch(error => {
+            console.error('Error creating Razorpay order: ' + error);
+        });
+    }
+</script>
+
+{% endblock %}

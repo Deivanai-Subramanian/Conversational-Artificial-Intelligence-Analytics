@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="w3-center "><b>New SIM Card Registration</b></h1>
+    <h3 class="w3-center w3-text-theme"><b>Number OTP verfication</b></h3>
+    <div class="w3-container w3-row">
+        <div class="w3-col w3-quarter"><p> </p></div>
+        <div class="w3-col w3-half w3-center">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+            <form class="w3-center" method="POST" action="/verify_new_otp">
+                <!--method="POST" action="/verify_otp"-->
+                <br>
+                {% if msg == "Successfull" %}
+                    <h4>OTP was sent to the Mobile Number {{phone_no}}</h4>
+                    <h4>Linked with the Aadhaar card {{aadhaar_no}}</h4>
+                    <br>
+                    <label for="otp"><b>Enter the OTP</b></label>
+                    <input class="w3-panel w3-boarder-teal" type="text" id="otp" name="otp" required>
+                    <br>
+                    <button class="w3-button w3-aqua w3-round">Verify OTP</button>
+                {% elif msg == "OTP verification failed" %}
+                    <h1 class="w3-text-red"><b>OTP Verification Failed!</b></h1>
+                    <h4>Please try again and enter the correct OTP</h4>
+                    <a href="{{ url_for('process_form') }}" class="w3-button w3-aqua w3-round">Retry</a>
+                    <br>
+                {% else %}
+                    <h3>{{msg}}</h3>
+                {% endif %}
+            </form>
+            </div>
+        </div>
+        <div class="w3-col w3-quarter"><p> </p></div>
+    </div>
+    <br>
+
+{% endblock %}

@@ -1,0 +1,741 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="w3-container w3-padding-16 w3-theme w3-animate-left w3-row">
+    <div class="w3-twothird w3-left">
+        <div class="w3-panel w3-padding-16">
+            <img src="{{ url_for('static', filename='images/Base/new-logo.svg') }}" width="30%">
+            <h1 class="w3-text-aqua" style="font-family:Times New Roman"><br><b>Recharge Your Connection,<br>
+                Energize Your Communication!<br></b></h1><br>
+            <!--P>Customize your own plan only exclusively with us <a href="{{ url_for('login') }}" class="w3-bar-item w3-button">Click Here</a></P-->
+        </div>
+    </div>
+    <div class="w3-third w3-right">
+        <div class="w3-panel w3-padding-16 w3-right">
+            <img src="{{ url_for('static', filename='images/diamond.png') }}" width="80%">
+        </div>
+    </div>
+</div>
+<div class="w3-container w3-row w3-bar-item">
+    <div class="w3-center w3-panel w3-padding-16">
+        <h1 class="w3-text-theme"> <b>Aspirants Plans</b> </h1>
+    </div>
+</div>
+<!--div class="w3-container w3-row w3-bar-item">
+    <ul>
+    <div class="w3-quarter w3-center w3-panel w3-padding-16" id="all">
+        <li class="w3-center w3-bar-item w3-button w3-round-xxlarge w3-aqua" style="text-decoration: none"><b>All Plans</b></li>
+    </div>
+    <div class="w3-quarter w3-center w3-panel w3-padding-16" id="dailyLimitplan">
+        <li class="w3-center w3-bar-item w3-button w3-round-xxlarge w3-aqua" style="text-decoration: none">Daily Limit Data Plans</li>
+    </div>
+    <div class="w3-quarter w3-center w3-panel w3-padding-16" id="NodailyLimitplan">
+        <li class="w3-center w3-bar-item w3-button w3-round-xxlarge w3-aqua" style="text-decoration: none">No Daily Limit Data Plans</li>
+    </div>
+    <div class="w3-quarter w3-center w3-panel w3-padding-16" id="addOn">
+        <li class="w3-center w3-bar-item w3-button w3-round-xxlarge w3-aqua" style="text-decoration: none">Add-on Data Plans</li>
+    </div>
+    </ul>
+</div-->
+
+<div class="dailyLimitplan">
+<h3 class="w3-text-deep-purple w3-center"><b>Data/Day Plans</b></h3>
+
+<div class="w3-container w3-row w3-light-grey">
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>149</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>20 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(149)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>179</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>24 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(179)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>209</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>28 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(209)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>199</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>23 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1.5GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(199)"><b>Recharge</b></button>
+        </div>
+    </div>
+</div>
+
+<div class="w3-container w3-row w3-light-grey">
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>239</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>28 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1.5 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(239)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>479</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>56 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1.5 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(479)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>666</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>84 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1.5 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(666)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>249</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>23 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>2 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(249)"><b>Recharge</b></button>
+        </div>
+    </div>
+</div>
+
+<div class="w3-container w3-row w3-light-grey">
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>299</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>28 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>2 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(299)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>533</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>56 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>2 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(533)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>719</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>84 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>2 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(719)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>349</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>30 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>2.5GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(349)"><b>Recharge</b></button>
+        </div>
+    </div>
+</div>
+
+<h3 class="w3-text-deep-purple w3-center"><b>Affordable Value Pack</b></h3>
+<div class="w3-container w3-row w3-light-grey">
+    <div class="w3-container w3-third">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>155</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>300 Overall SMS</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>28 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>OVERALL DATA</p>
+                    <p><b>2 GB</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(155)"><b>Recharge</b></button>
+        </div>
+    </div>
+    <div class="w3-container w3-third">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>395</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>1000 Overall SMS</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>84 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>OVERALL DATA</p>
+                    <p><b>6 GB</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(395)"><b>Recharge</b></button>
+        </div>
+    </div>
+    <div class="w3-container w3-third">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>1559</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>3600 Overall SMS</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>336 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>OVERALL DATA</p>
+                    <p><b>24 GB</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(1559)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<h3 class="w3-text-deep-purple w3-center"><b>Annual Plans</b></h3>
+<div class="w3-container w3-row w3-light-grey">
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>2545</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>365 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>1.5 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(2545)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>2878</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>365 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>2 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(2878)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>2999</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>365 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>2.5 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(2999)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-quarter">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half">
+                    <h1><b><i>&#8377</i>999</b></h1>
+                </div>
+                <div class="w3-half">
+                    <h6 class="w3-text-indigo w3-right"><b>Unlimited Calls</b><br>
+                    <b>100 SMS/Day</b></h6>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-half">
+                    <p>VALIDITY</p>
+                    <p><b>84 Days</b></p>
+                </div>
+                <div class="w3-half">
+                    <p>DATA</p>
+                    <p><b>3 GB/Day</b></p>
+                </div>
+            </div>
+            <br>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(999)"><b>Recharge</b></button>
+        </div>
+    </div>
+</div>
+
+
+
+<!--NEW DIV-->
+<div class="addOn">
+    <h3 class="w3-text-deep-purple w3-center"><b>Add On Plans</b></h3>
+<div class="w3-container w3-row w3-light-grey">
+    <div class="w3-container w3-col" style="width:20%">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half ">
+                    <h2><b><i>&#8377</i>15</b></h2>
+                </div>
+                <div class="w3-half">
+                    <h4 class="w3-right">DATA<br><b>1 GB</b></h4>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-row w3-center">
+                    <p>VALIDITY <b>ACTIVE PLAN</b></p>
+                </div>
+            </div>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(15)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-col" style="width:20%">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half ">
+                    <h2><b><i>&#8377</i>25</b></h2>
+                </div>
+                <div class="w3-half">
+                    <h4 class="w3-right">DATA<br><b>2 GB</b></h4>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-row w3-center">
+                    <p>VALIDITY <b>ACTIVE PLAN</b></p>
+                </div>
+            </div>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(25)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-col" style="width:20%">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half ">
+                    <h2><b><i>&#8377</i>61</b></h2>
+                </div>
+                <div class="w3-half">
+                    <h4 class="w3-right">DATA<br><b>6 GB</b></h4>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-row w3-center">
+                    <p>VALIDITY <b>ACTIVE PLAN</b></p>
+                </div>
+            </div>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(61)"><b>Recharge</b></button>
+        </div>
+    </div>
+
+    <div class="w3-container w3-col" style="width:20%">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half ">
+                    <h2><b><i>&#8377</i>121</b></h2>
+                </div>
+                <div class="w3-half">
+                    <h4 class="w3-right">DATA<br><b>12 GB</b></h4>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-row w3-center">
+                    <p>VALIDITY <b>ACTIVE PLAN</b></p>
+                </div>
+            </div>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(121)"><b>Recharge</b></button>
+        </div>
+    </div>
+    <div class="w3-container w3-col" style="width:20%">
+        <div class="w3-panel w3-card-2 w3-white w3-padding-16 w3-round-xlarge">
+            <div class="w3-container">
+                <div class="w3-half ">
+                    <h2><b><i>&#8377</i>222</b></h2>
+                </div>
+                <div class="w3-half">
+                    <h4 class="w3-right">DATA<br><b>50 GB</b></h4>
+                </div>
+            </div>
+            <hr>
+            <div class="w3-container">
+                <div class="w3-row w3-center">
+                    <p>VALIDITY <b>ACTIVE PLAN</b></p>
+                </div>
+            </div>
+            <button class="w3-button w3-block w3-theme w3-hover-aqua w3-round-xlarge" onclick="openRazorpayPopup(222)"><b>Recharge</b></button>
+        </div>
+    </div>
+    <br>
+</div>
+
+
+
+
+<script>
+    function openRazorpayPopup(amount) {
+        // Convert the amount to paise
+        var amountInPaise = amount * 100;
+
+        // Make an AJAX request to your server to create a Razorpay order
+        fetch('/create-razorpay-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount: amountInPaise }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Initialize the Razorpay object with your Razorpay API key
+            var options = {
+                key: 'rzp_test_uYSCttEb2YeTMd',
+                amount: data.amount, // Amount in paise
+                currency: 'INR', // Currency code
+                name: 'Aspirants Telecom',
+                description: 'Recharge',
+                order_id: data.id,
+                handler: function (response) {
+                                // You can handle the payment success here
+                                $.ajax({
+                                    url: '/store_payment', // Modify the URL as needed
+                                    method: 'POST',
+                                    contentType: 'application/json', // Set the content type
+                                    data: JSON.stringify({
+                                        razorpay_payment_id: response.razorpay_payment_id,
+                                        razorpay_order_id: response.razorpay_order_id,
+                                        description: 'Recharge',
+                                    }),
+                                    success: function (data) {
+                                        alert('Payment successful for Recharging! Payment ID: ' + response.razorpay_payment_id);
+                                        if (data.message === "Payment details saved in MongoDB") {
+                                            // Redirect to Home.html
+                                            window.location.href = '/home';
+                                        }
+                                    },
+                                    error: function () {
+                                        alert('Error storing payment details.');
+                                    }
+                                });
+                            },
+                            theme: {
+                                color: '#0a0082' ,
+                                },
+                            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        })
+        .catch(error => {
+            console.error('Error creating Razorpay order: ' + error);
+        });
+    }
+</script>
+
+
+
+{% endblock %}

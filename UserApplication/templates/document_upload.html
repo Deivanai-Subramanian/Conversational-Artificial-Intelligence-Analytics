@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="w3-center "><b>New SIM Card Registration</b></h1>
+    <h3 class="w3-center w3-text-theme"><b>Upload Document</b></h3>
+    <div class="w3-container w3-row">
+        <div class="w3-col w3-quarter"><p> </p></div>
+        <div class="w3-col w3-half w3-center">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+            <form class="w3-center" action="/process_form" method="POST"  enctype="multipart/form-data">
+                <br>
+                <h4>Please add the valid AADHAAR ID proof for eKYC verification.</h4>
+                <p>Accepted formats: PDF, DOC, DOCX.</p> <br>
+                <!-- Document Upload Field -->
+                <label for="document"><b>Upload Document:</b></label>
+                <input type="file" id="document" name="document" accept=".pdf, .doc, .docx"><br><br>
+                <button class="w3-button w3-aqua w3-round">Submit</button> <br> <br>
+            </form>
+        </div>
+        </div>
+        <div class="w3-col w3-quarter"><p> </p></div>
+    </div>
+    <br>
+
+{% endblock %}

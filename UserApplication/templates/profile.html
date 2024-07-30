@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="w3-center w3-text-theme"><b>Profile</b></h1>
+    <div class="w3-container w3-row">
+        <div class="w3-col w3-quarter"><p> </p></div>
+        <div class="w3-col w3-half w3-center">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                <br>
+                <h4><b>Name:</b> {{ user.Name }}</h4>
+                <h4><b>Phone Number:</b> {{ phoneNo }}</h4>
+                <h4><b>Gender:</b> {{ user.Gender }}</h4>
+                <h4><b>Date of Birth:</b> {{ user.DOB }}</h4>
+                <h4><b>Permanent Address:</b> {{ user.Address }}</h4>
+                <p class="w3-text-teal"><b>NOTE: These details are as per KYC document and cannot be edited</b></p>
+                    <br> <br>
+            </div>
+        </div>
+        <div class="w3-col w3-quarter"><p> </p></div>
+    </div>
+    <br>
+
+{% endblock %}

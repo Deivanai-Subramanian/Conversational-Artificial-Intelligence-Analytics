@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1 class="w3-center "><b>Welocome to the Aspirants family!</b></h1>
+    <h3 class="w3-center w3-text-theme"><b>New SIM Card Activation Process</b></h3><br>
+    <div class="w3-container w3-row">
+        <div class="w3-col w3-quarter"><p> </p></div>
+        <div class="w3-col w3-half w3-center">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+                {% if msg == "eSIMprocess" %}
+                <h4>Your eSIM 10-digit Activation code: {{idno}}</h4>
+                <p>Open your device's settings, navigate to the eSIM or cellular section, and select
+                    <br>'Add Cellular Plan.' Manually enter the activation code.
+                    <br>Follow the on-screen prompts to confirm the activation and choose your preferences for the eSIM profile.
+                    <br>Once activated, your eSIM is ready for use, and you can make calls, send texts, and use mobile data.</p>
+                {% else %}
+                <h4>Your SIM card Tracking ID: {{idno}}</h4>
+                <p>Once you received your physical SIM card, just Insert your new SIM card into your phone.
+                    <br>Your number will get Activated within few minutes
+                    <br>Once activated, you can make calls, send texts, and use mobile data.</p>
+                {% endif %}
+                <a href="{{ url_for('home') }}" class="w3-button w3-aqua w3-round">Redirect to Home</a><br>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col w3-quarter"><p> </p></div>
+    </div>
+    <br>
+
+{% endblock %}

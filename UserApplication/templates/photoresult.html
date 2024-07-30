@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="w3-center "><b>New SIM Card Registration</b></h1>
+    <h3 class="w3-center w3-text-theme"><b>Upload Photo</b></h3>
+    <div class="w3-container w3-row">
+        <div class="w3-col w3-quarter"><p> </p></div>
+        <div class="w3-col w3-half w3-center">
+            <div class="w3-panel w3-card-2 w3-theme-l5 w3-padding-16">
+            <form class="w3-center" >
+                <!--method="POST" action="/verify_otp"-->
+                <br>
+                    <h4>Photo Verification Process:</h4>
+                    {% if msg == "success" %}
+                    <h4 class="w3-text-green"><b>Successfully Completed!</b></h4>
+                    <br>
+                    <a href="{{ url_for('NewSimType') }}" class="w3-button w3-aqua w3-round">Next</a>
+                    {% else %}
+                    <h4 class="w3-text-red"><b>Unsuccessful</b></h4>
+                    <p>(Make sure that your camera scanning you with good lightening and clarity image capture)</p>
+                    <br>
+                    <a href="{{ url_for('uploadPhoto') }}" class="w3-button w3-aqua w3-round">Retry</a>
+                    <br>
+                    {% endif %}
+                    <br> <br>
+            </form>
+            </div>
+        </div>
+        <div class="w3-col w3-quarter"><p> </p></div>
+    </div>
+    <br>
+
+{% endblock %}

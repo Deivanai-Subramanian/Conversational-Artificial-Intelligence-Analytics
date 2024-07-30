@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="w3-padding-16 w3-white w3-container ">
+    <div class="w3-center w3-panel w3-card-4 w3-theme-l4 w3-padding-16 w3-round-xxlarge">
+    <div class="w3-twothird w3-center">
+        <img src="{{ url_for('static', filename='images/Service/CustomerCare.png') }}" width="60%">
+    </div>
+    <div class="w3-third">
+      <p class="w3-text-theme w3-xxlarge w3-center" style="font-family:Times New Roman"><b>We won't want you to leave from our Aspirants family</b>
+          <br>Customer care team will resolve your Issue for cancellation</p>
+        <h4>Kindly provide detailed information about your reason for cancellation</h4>
+        <br>
+        <a href="#" id="cancelButton" class="w3-center w3-button w3-aqua w3-round-xlarge">Click Here</a> <br>
+    </div>
+    </div>
+</div>
+
+
+    <div id="canceldetails" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+            <div class="w3-container w3-center">
+                <span onclick="document.getElementById('canceldetails').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <br><h2 class="w3-text-theme w3-center"><b>Submit your Reason for Cancellation</b></h2> <br>
+                <form id="cancellationReasonForm">
+                        <div class="form-group">
+                            <label for="cancellationReason">Reason for Cancellation:</label><br>
+                            <textarea class="w3-panel w3-boarder-teal" id="cancellationReason" name="cancellationReason" rows="4"></textarea>
+                        </div>
+                </form>
+                <form id="emailInputForm">
+                        <div class="form-group">
+                            <label for="userEmail">Enter your Email:</label><br>
+                            <input type="text" class="w3-panel w3-boarder-teal" id="userEmail" name="userEmail">
+                        </div>
+                </form>
+                <div class="w3-container w3-center">
+                    <a href="#" type="button" class="w3-center w3-button w3-aqua w3-round-xlarge" id="submitPhoneNumber">Submit</a>
+                    <br>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // JavaScript to show the modal
+        document.getElementById("cancelButton").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+            document.getElementById("canceldetails").style.display = "block";
+        });
+
+        // Close the modal when the close button is clicked
+        document.querySelector(".w3-display-topright").addEventListener("click", function () {
+            document.getElementById("canceldetails").style.display = "none";
+        });
+        document.getElementById('submitPhoneNumber').addEventListener('click', function () {
+        // Get the phone number from the input field
+        var cancellationReason = document.getElementById('cancellationReason').value;
+        var userEmail = document.getElementById('userEmail').value;
+        alert('We have received your cancellation reason, our Aspirants Customer Care team will contact you');
+        window.location.href = "/cancel_sim?reason=" + cancellationReason + "&email=" + userEmail;
+});
+</script>
+
+{% endblock %}
