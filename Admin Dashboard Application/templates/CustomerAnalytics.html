@@ -1,0 +1,83 @@
+{% extends "AnalyticsBase.html" %}
+
+{% block content %}
+
+    <DIV class="w3-theme-l5" style="margin-left:80px">
+        <div class="w3-container">
+            <h1 class="w3-text-theme"><b>CUSTOMER ANALYTICS DASHBOARD</b></h1>
+        </div>
+        <br>
+        <div>
+            <div class="w3-container w3-row">
+                <div class="w3-container w3-quarter w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                       <h6><b>Average Revenue Per User (ARPU)</b></h6>
+                        <h2><i>&#8377</i>1000 per yr</h2>
+                    </div>
+                </div>
+                <div class="w3-container w3-quarter w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h6><b>Customer Acquisition Cost (CAC)</b></h6>
+                        <h2><i>&#8377</i>500</h2>
+                    </div>
+                </div>
+                <div class="w3-container w3-quarter w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h6><b>Customer Lifetime Value (CLV)</b></h6>
+                        <h2><i>&#8377</i>4,800</h2>
+                    </div>
+                </div>
+                <div class="w3-container w3-quarter w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h6><b>Average Customer Lifespan</b></h6>
+                        <h2>10 - 15 yrs</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="w3-container w3-row">
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Customer Retention Rate</h3>
+                        <canvas id="retentionGaugeChart"></canvas>
+                        <h6><b>93.5%</b></h6>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Customer Churn Rate</h3>
+                        <canvas id="ChurnGaugeChart"></canvas>
+                        <h6><b>13.6%</b></h6>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Customer by gender</h3>
+                        <canvas id="genderChart" height="200" class="w3-center"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3> Subscriber and Churn Rate by Month</h3>
+                        <canvas id="mixedChart" width="600" height="300"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Customer Retention Rate by Month</h3>
+                        <canvas id="barChart" width="600" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </DIV>
+
+    <script src="static/js/CustomerAnalytics.js"></script>
+
+{% endblock %}

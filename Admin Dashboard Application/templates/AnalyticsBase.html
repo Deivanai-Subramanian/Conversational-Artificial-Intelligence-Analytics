@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Aspirants Telecom</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="https://cdn.rawgit.com/bernii/gauge.js/master/dist/gauge.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    </head>
+
+    <body>
+    <DIV class="w3-sidebar w3-bar-block" style="width:80px; background-color:#0E1860;">
+        <p class="w3-center"><i class="material-icons w3-text-light-grey w3-xxxlarge w3-tooltip">menu<span style="position:absolute;left:0;bottom:-10px" class="w3-text w3-text-aqua w3-large"><b>MENU</b></span></i></p>
+        <a href="{{ url_for('CustomerAnalytics') }}" class="w3-bar-item w3-button w3-center"><i class="material-icons w3-text-aqua w3-xxlarge">analytics</i><p class="w3-tiny w3-center w3-text-aqua"><b>Customer</b></p></a>
+        <a href="{{ url_for('PlanSalesAnalytics') }}" class="w3-bar-item w3-button w3-center"><i class="material-icons w3-text-aqua w3-xxlarge">sell</i><p class="w3-tiny w3-center w3-text-aqua"><b>Sales</b></p></a>
+        <a href="{{ url_for('ChatbotAnalytics') }}" class="w3-bar-item w3-button w3-center"><i class="material-icons w3-text-aqua w3-xxlarge">sms</i><p class="w3-tiny w3-center w3-text-aqua"><b>Chatbot</b></p></a>
+        <a href="{{ url_for('Service') }}" class="w3-bar-item w3-button w3-center"><i class="material-icons w3-text-aqua w3-xxlarge">sd_card</i><p class="w3-tiny w3-center w3-text-aqua"><b>Cancel</b></p></a>
+        <a href="{{ url_for('UserIssues') }}" class="w3-bar-item w3-button w3-center"><i class="material-icons w3-text-aqua w3-xxlarge">error</i><p class="w3-tiny w3-center w3-text-aqua"><b>Issues</b></p></a>
+        <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button w3-display-bottomleft w3-center"><i class="material-icons w3-text-light-grey w3-xxlarge">logout</i></a>
+    </DIV>
+    <DIV style="margin-left:80px" >
+        <div class="w3-container w3-bar" style="background-color:#0E1860;">
+        <img src="{{ url_for('static', filename='images/virtusaEdit.jpg') }}" width="25%" class="w3-left">
+
+        <a href="{{ url_for('AdminProfile') }}" class="w3-bar-item w3-button w3-right"><i class="material-icons w3-text-light-grey w3-xxxlarge">account_circle</i></a>
+        <a href="{{ url_for('Email') }}" class="w3-bar-item w3-button w3-right"><i class="material-icons w3-text-light-grey w3-xxxlarge">mail</i></a>
+        </div>
+    </DIV>
+        <div id="lastRefreshTime" class="w3-right w3-theme-l5 w3-panel w3-large"></div>
+        {% block content %}{% endblock %}
+    <script src="static/js/lastRefresh.js"></script>
+    </body>
+
+    <FOOTER style="background-color:#0E1860;">
+        <div class="w3-container w3-xlarge w3-center">
+            <br>
+          <i class="fa fa-facebook-official w3-text-aqua w3-hover-opacity"></i>
+          <i class="fa fa-instagram w3-text-aqua w3-hover-opacity"></i>
+          <i class="fa fa-twitter w3-text-aqua w3-hover-opacity"></i>
+          <i class="fa fa-linkedin w3-text-aqua w3-hover-opacity"></i>
+          <i class="fa fa-youtube w3-text-aqua w3-hover-opacity"></i>
+        </div>
+        <div class="w3-container w3-row">
+            <p class="w3-center w3-text-light-grey">©2023 Aspirants Telecom Corp. All rights reserved<br>
+                <br>Privacy Policy | Cookies Policy | Terms of Use | Compliance | Glossary</p>
+        </div>
+    </FOOTER>
+</html>

@@ -1,0 +1,134 @@
+{% extends "AnalyticsBase.html" %}
+
+{% block content %}
+
+<DIV class="w3-theme-l5" style="margin-left:80px">
+      <div class="w3-container">
+          <h1 class="w3-text-theme"><b>CHATBOT ANALYTICS DASHBOARD</b></h1>
+      </div>
+      <br>
+      <div>
+            <div class="w3-container w3-col w3-third">
+                <div class="w3-container w3-row w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                       <h6><b>Chatbot Framework & Investment</b></h6>
+                        <h4>RASA - Open Source with zero investment</h4>
+                    </div>
+                </div>
+
+                <div class="w3-container w3-row w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Customer Satisfaction (CSAT)</h3>
+                        <canvas id="csatGauge"></canvas>
+                        <h6><b>95%</b></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-container w3-col w3-third">
+                <div class="w3-container w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                       <h3>User Identification (Gender)</h3>
+                      <canvas id="userIdentificationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-container w3-col w3-third">
+                <div class="w3-container w3-row w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                       <h3>User Interaction Rate</h3>
+                        <canvas id="userInteractionRateChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+      <div>
+          <br>
+      <div>
+            <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Number of New Users</h3>
+                        <canvas id="newUsersChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>User Retention Rate</h3>
+                        <canvas id="retentionRateChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+      </div>
+        <br>
+      <div>
+            <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Number of Interactions per User Session</h3>
+                        <canvas id="interactionsPerSessionChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Task Completion Rate</h3>
+                        <canvas id="taskCompletionRateChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+      </div>
+        <br>
+      <div>
+            <div class="w3-container w3-row">
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Intent Recognition Accuracy</h3>
+                        <canvas id="intentAccuracyChart"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-twothird w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Fallback Rate Over Time</h3>
+                        <canvas id="fallbackRateChart" width="700" height="323"></canvas>
+                    </div>
+                </div>
+            </div>
+      </div>
+          <br>
+      <div>
+          <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Total Conversations</h3>
+                        <canvas id="totalConversationsChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Conversation Length</h3>
+                        <div id="boxplot" style="width: 600px; height: 410px;"></div>
+                    </div>
+                </div>
+          </div>
+      </div>
+          <br>
+      <div>
+          <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Integration Success Rate</h3>
+                        <div id="integrationSuccessChart" style="width: 600px; height: 410px;"></div>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Error Rate in Integrations</h3>
+                        <canvas id="errorRateChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+          </div>
+      </div>
+          <br>
+</DIV>
+
+<script src="static/js/ChatbotAnalytics.js"></script>
+
+{% endblock %}

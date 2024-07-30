@@ -1,0 +1,121 @@
+{% extends "AnalyticsBase.html" %}
+
+{% block content %}
+<style>
+    .chart-container {
+      display: inline-block;
+      width: 45%;
+      margin: 10px;
+    }
+    .funnel-container {
+      width: 45%;
+      margin: 10px;
+      float: right;
+      overflow: visible; /* Show the overflow content */
+      padding-right: 20px; /* Adjust the right padding */
+    }
+  </style>
+
+<DIV class="w3-theme-l5" style="margin-left:80px">
+
+    <div class="w3-container">
+          <h1 class="w3-text-theme"><b>SALES ANALYTICS DASHBOARD</b></h1>
+    </div>
+    <br>
+    <div>
+        <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Total Revenue</h3>
+                        <canvas id="revenueChart" width="500" height="300"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Revenue Breakdown by Plan Types</h3>
+                        <canvas id="revenueByPlanTypesChart" width="500" height="300"></canvas>
+                    </div>
+                </div>
+        </div>
+
+        <div class="w3-container w3-row">
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Revenue by SIM vs E-SIM</h3>
+                        <canvas id="revenueBySIMChart" width="500" height="300"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Data Plans vs Customized Plan</h3>
+                        <canvas id="revenueByPlansChart" width="500" height="300"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Revenue Breakdown by AddOn</h3>
+                        <canvas id="revenueByADDONChart" width="500" height="300"></canvas>
+                    </div>
+                </div>
+        </div>
+
+        <div class="w3-container w3-row">
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Retention Rate Trend</h3>
+                        <canvas id="retentionGaugeChart"></canvas>
+                        <h6><b>93.5%</b></h6>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Net Promoter Score (NPS)</h3>
+                        <canvas id="npsGauge"></canvas>
+                        <h6><b>95%</b></h6>
+                    </div>
+                </div>
+                <div class="w3-container w3-third w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Customer Churn Rate</h3>
+                        <canvas id="churnRateChart" width="100" height="50"></canvas>
+                    </div>
+                </div>
+        </div>
+
+        <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>New Customer Sign-ups</h3>
+                        <canvas id="newCustomerSignupsChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Average Revenue Per User</h3>
+                        <canvas id="arpuChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+        </div>
+
+        <div class="w3-container w3-row">
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Conversion Rates by Plans</h3>
+                        <canvas id="conversionRateChart" width="300" height="200"></canvas>
+                    </div>
+                </div>
+                <div class="w3-container w3-half w3-center">
+                    <div class="w3-panel w3-white w3-card-2 w3-padding-16">
+                        <h3>Plan Penetration - Horizontal Bar Chart</h3>
+                        <canvas id="planPenetrationChart" width="600" height="400"></canvas>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+</DIV>
+
+<script src="static/js/PlanSalesAnalytics.js"></script>
+
+{% endblock %}

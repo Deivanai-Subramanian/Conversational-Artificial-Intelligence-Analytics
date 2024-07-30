@@ -1,0 +1,19 @@
+Use Case: EME TECH-2 Conversational AI Analytics
+Team Name: Tech Aspirants
+PART 1: Aspirants TELECOM WEB APPLICATION
+Key Features: 
+* Online KYC Verification System (using Aadhar Card)
+* No Store visit for Lost SIM and SIM Porting Request
+* IVR Conversational AI 
+* Customized Plan (Based on Gradient Boost Algorithm)
+* 24/7 Chatbot access (RASA Framework)
+* Payment Gateway (RazorPay)
+PART 2: ADMIN ANALYTICS
+Key Features:
+* Customer Analytics Dashboard
+* Chatbot Analytics Dashboard
+* Sales Analytics Dashboard
+* User Issues and Cancel request page
+* Visualization Framework - Chart.js, Gauge.js, Plotly.js
+
+Our implemented solution is completely build using the OPEN SOURCE resorces.

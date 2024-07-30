@@ -1,0 +1,28 @@
+{% extends "AnalyticsBase.html" %}
+
+{% block content %}
+
+<DIV class="w3-theme-l5" style="margin-left:80px">
+      <div class="w3-container">
+          <h1 class="w3-text-theme"><b>SERVICE CANCELLATION REQUEST</b></h1>
+      </div>
+      <br>
+
+      <!-- Iterate through each document and display its content -->
+    <div class="w3-container">
+    {% for document in documents %}
+        <div class="w3-panel w3-white w3-card ">
+            <h2>Cancel Request {{ loop.index }}</h2>
+            <ul>
+                {% for key, value in document.items() %}
+                    <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+    </div>
+
+
+ </DIV>
+
+{% endblock %}
